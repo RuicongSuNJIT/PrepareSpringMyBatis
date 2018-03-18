@@ -13,7 +13,7 @@
     http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 自动扫描SpringMVC包 ,将带有注解的类 纳入spring容器管理 -->
-    <context:component-scan base-package="com.zxsc.ssx"/>
+    <context:component-scan base-package="com.zxsc.prepare"/>
 
     <!-- 引入jdbc配置文件 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -51,7 +51,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis.xml"/>
-        <property name="mapperLocations" value="classpath*:com/zxsc/ssx/**/dao/*.xml"/>
+        <property name="mapperLocations" value="classpath*:com/zxsc/prepare/**/dao/*.xml"/>
     </bean>
 
     <!-- spring与mybatis整合配置，扫描所有dao -->
@@ -66,7 +66,7 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.zxsc.dao"/>
         <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>
-        <property name="annotationClass" value="com.zxsc.ssx.core.annotation.MyBatisRepository"/>
+        <property name="annotationClass" value="com.zxsc.prepare.core.annotation.MyBatisRepository"/>
     </bean>
 
     <!-- 事务管理 通知 -->
@@ -95,4 +95,11 @@
     <!-- 对dataSource 数据源进行事务管理 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
           p:dataSource-ref="dataSource"/>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i18n.Message"/>
+        <!--开发时将cacheSeconds调整为0，则每次访问springMessage都会更新，不需要重启。-->
+        <property name="cacheSeconds" value="-1"/>
+        <property name="defaultEncoding" value="utf-8"/>
+    </bean>
 </beans>

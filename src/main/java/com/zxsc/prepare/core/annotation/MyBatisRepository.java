@@ -1,4 +1,4 @@
-package com.zxsc.ssx.core.annotation;
+package com.zxsc.prepare.core.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.zxsc.ssx</groupId>
-    <artifactId>spring-mybatis</artifactId>
+    <groupId>com.zxsc.prepare</groupId>
+    <artifactId>prepare-sm</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>spring-mybatis</name>
+    <name>prepare-sm</name>
     <url>http://maven.apache.org</url>
 
     <dependencies>
@@ -172,7 +172,7 @@
     </dependencies>
 
     <build>
-        <finalName>spring-mybatis</finalName>
+        <finalName>prepare-sm</finalName>
         <resources>
             <!--表示把java目录下的有关xml文件,properties文件编译/打包的时候放在resource目录下-->
             <resource>
