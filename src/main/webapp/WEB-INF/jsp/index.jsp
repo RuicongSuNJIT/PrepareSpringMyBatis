@@ -13,10 +13,17 @@
 <html>
 <title><spring:message code="learn-sm"/></title>
 <body>
-<form action="<c:url value="/user/login"/>" method="post">
+<form id="loginForm" action="<c:url value="/user/login"/>" method="post">
     <input type="text" name="username" placeholder="<spring:message code="username"/>"/>
     <input type="password" name="password" placeholder="<spring:message code="password"/>"/>
-    <input type="submit" value="<spring:message code="login"/>"/>
+    <a href="#" onclick="login()"><spring:message code="login"/></a>
+    <a href="<c:url value="/user/register"/>"><spring:message code="register"/></a>
 </form>
 </body>
+<script type="text/javascript" src="<c:url value="/js/jquery-3.1.1.js"/>"></script>
+<script type="text/javascript">
+    function login() {
+        $('#loginForm').submit();
+    }
+</script>
 </html>
