@@ -39,11 +39,15 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public AjaxResponse register(UserPass userPass, Locale locale) {
-
+        if (userService.countUserByName(userPass) != 0) {
+            return new AjaxResponse(ResultType.ERROR,
+                    messageSource.getMessage("user-exist", new Object[0], locale));
+        }
         if (userService.insertUser(userPass)) {
             System.out.println(userPass.getId());
             return new AjaxResponse(ResultType.OK);
         }
-        return new AjaxResponse(ResultType.ERROR, messageSource.getMessage("sys-error", new Object[0], locale));
+        return new AjaxResponse(ResultType.ERROR,
+                messageSource.getMessage("sys-error", new Object[0], locale));
     }
 }

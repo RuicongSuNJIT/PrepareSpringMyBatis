@@ -2,6 +2,7 @@ package com.zxsc.prepare.user.service;
 
 import com.zxsc.prepare.core.util.Constants;
 import com.zxsc.prepare.user.dao.UserDao;
+import com.zxsc.prepare.user.pojo.User;
 import com.zxsc.prepare.user.pojo.UserPass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,5 +18,9 @@ public class UserService {
 
     public boolean insertUser(UserPass userPass) {
         return userDao.insertUser(userPass) == Constants.SQL_CHANGE_ONE_LINE;
+    }
+
+    public int countUserByName(UserPass userPass){
+        return userDao.countUserByName(userPass);
     }
 }
