@@ -23,4 +23,8 @@ public class UserService {
     public int countUserByName(UserPass userPass){
         return userDao.countUserByName(userPass);
     }
+
+    public User selectUserByNamePass(UserPass userPass) {
+        return userDao.selectUserByNamePass(userPass);
+    }
 }

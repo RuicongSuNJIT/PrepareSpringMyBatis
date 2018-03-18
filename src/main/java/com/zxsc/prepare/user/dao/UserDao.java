@@ -9,4 +9,6 @@ public interface UserDao {
     int insertUser(UserPass userPass);
 
     int countUserByName(UserPass userPass);
+
+    User selectUserByNamePass(UserPass userPass);
 }

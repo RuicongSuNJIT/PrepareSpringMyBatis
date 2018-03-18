@@ -2,6 +2,7 @@ package com.zxsc.prepare.user.controller;
 
 import com.zxsc.prepare.core.ajax.AjaxResponse;
 import com.zxsc.prepare.core.ajax.ResultType;
+import com.zxsc.prepare.user.pojo.User;
 import com.zxsc.prepare.user.pojo.UserPass;
 import com.zxsc.prepare.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,8 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(UserPass userPass) {
-        System.out.println(userPass);
+        User user = userService.selectUserByNamePass(userPass);
+        System.out.println(user);
         return "index";
     }
 

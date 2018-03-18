@@ -8,12 +8,20 @@
         VALUES (#{username}, #{password})
     </insert>
 
-    <select id="countUserByName" resultType="int">
+    <select id="countUserByName" resultType="java.lang.Integer">
         SELECT count(*)
         FROM `user`
         WHERE `username` = #{username}
     </select>
 
+    <resultMap id="User" type="com.zxsc.prepare.user.pojo.User">
+        <id property="id" column="user_id"/>
+    </resultMap>
 
+    <select id="selectUserByNamePass" resultMap="User">
+        SELECT `user_id`, `username`
+        FROM `user`
+        WHERE `username` = #{username} AND `password` = #{password}
+    </select>
 
 </mapper>
