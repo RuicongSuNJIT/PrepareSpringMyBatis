@@ -1,3 +1,4 @@
+<%--@elvariable id="user" type="com.zxsc.prepare.user.pojo.User"--%>
 <%--
   Created by IntelliJ IDEA.
   User: surc
@@ -15,11 +16,11 @@
 <body>
 <c:choose>
     <c:when test="${user == null}">
-        <form id="loginForm" action="<c:url value="/user/login"/>" method="post">
+        <form id="loginForm" action="<c:url value="/authority/login"/>" method="post">
             <input type="text" name="username" placeholder="<spring:message code="username"/>"/>
             <input type="password" name="password" placeholder="<spring:message code="password"/>"/>
             <a href="#" onclick="login()"><spring:message code="login"/></a>
-            <a href="<c:url value="/user/register"/>"><spring:message code="register"/></a>
+            <a href="<c:url value="/authority/register"/>"><spring:message code="register"/></a>
         </form>
     </c:when>
     <c:otherwise>

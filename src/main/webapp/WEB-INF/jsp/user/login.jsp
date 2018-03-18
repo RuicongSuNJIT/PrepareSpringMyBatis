@@ -18,12 +18,12 @@
         ${error.message}
     </c:if>
 </div>
-<form action="<c:url value="/user/login"/>" method="post">
+<form action="<c:url value="/authority/login"/>" method="post">
     <input type="text" name="username" placeholder="<spring:message code="username"/>"/> <br/>
     <input type="password" name="password" placeholder="<spring:message code="password"/>"><br/>
     <input type="submit" value="<spring:message code="login"/>"/>
 </form>
-<a href="<c:url value="/user/register"/>"><spring:message code="register"/></a>
+<a href="<c:url value="/authority/register"/>"><spring:message code="register"/></a>
 |
 <a href="#"><spring:message code="forgot-password"/></a>
 </body>

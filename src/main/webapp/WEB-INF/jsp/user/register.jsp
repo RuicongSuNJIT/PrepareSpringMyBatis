@@ -27,7 +27,7 @@
 
     function register() {
         $.ajax({
-            'url': '<c:url value="/user/register"/>',
+            'url': '<c:url value="/authority/register"/>',
             'type': 'post',
             'data': {
                 'username': $('#username').val(),
