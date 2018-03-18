@@ -64,7 +64,7 @@
     </bean>
     <!-- 配置mybatis mapper接口，扫描所有dao -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.zxsc.dao"/>
+        <property name="basePackage" value="com.zxsc.prepare"/>
         <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>
         <property name="annotationClass" value="com.zxsc.prepare.core.annotation.MyBatisRepository"/>
     </bean>
@@ -85,7 +85,7 @@
     </tx:advice>
 
     <aop:config>
-        <aop:pointcut id="serviceMethods" expression="execution(* com.zxsc..service..*(..))"/>
+        <aop:pointcut id="serviceMethods" expression="execution(* com.zxsc.prepare..service..*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods"/>
     </aop:config>
 

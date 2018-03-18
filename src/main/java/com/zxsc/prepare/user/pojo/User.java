@@ -1,6 +1,7 @@
 package com.zxsc.prepare.user.pojo;
 
 public class User {
+    private long id;
     private String username;
 
     public String getUsername() {
@@ -9,5 +10,13 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
